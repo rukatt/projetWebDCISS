@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cabinet Médical</title>
+    <link rel="stylesheet" href="dev/secretary.css"/>
+    <script src="dev/secretary.js"></script>
+  </head>
+
+  <body>
+    <h1>{{$ctrl.titre}}</h1>
+    <p>On prends les données dans {{$ctrl.src}}</p>
+    <ul>
+      <li ng-repeat="inf in $ctrl.data.infirmiers">
+	<infirmier data="inf"></infirmier>
+	{{inf|json}}
+      </li>
+    </ul>
+  </body>
+</html>

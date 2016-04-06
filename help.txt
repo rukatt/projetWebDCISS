@@ -1,0 +1,35 @@
+- camelCase en js, je-ne-sais-pas-quoi-case en html
+
+* Synchroniser (et évaluer ?) :
+-- ng-submit ?
+-- {{}}
+
+* ng-repeat : fait un truc itératif ? sorte de boucle "for ... in ..." ?
+
+* Utiliser ng-click à la plaçe de on-click (on-click eval au niveau global,
+                                            ng-click au niveau balise/angular machin)
+
+* Directive : balise, nom de balise, ou ... (vs component, qui défini juste une balise)
+-- restrict : ???
+-- bindToController : référence ??? dans controller, pas dans scope si 'true'
+-- controllerAs : nom du controller
+-- controller : pareil que component ?
+
+John Papa est bon en Angular (bonne pratique) ; IRC
+
+bootstrap est à l'ancienne,
+vaut mieux voir les templates/design patterns sur le site d'angular-material
+
+
+----
+Projet :
+- Serveur : boite noire avec API HTML
+- Client  = service Angular qu'on a défini, qui sert de proxy vers le serveur
+- Composant 'Cabinet' <-- gère 'Infirmiers' et 'Patients'
+                      <-> service Angular
+
+Service Angular : gère les $http.get, $post.post vers le serveur
+		  gros objet qui aussi parse le xml et interréagit avec le composant "Cabinet"
+
+Cabinet à besoin proxy.getData(...).then() -> utilisation de Promise
+$http.get :: QuelqueChose -> Promise
