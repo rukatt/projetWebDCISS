@@ -16,6 +16,6 @@ function processData(resp) {
     };
 }
 
-// implementer aussi :
+// TODO : implementer :
 // - affecter(patientId, infirmierId)
 // - creerPatient(...)
