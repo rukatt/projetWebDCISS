@@ -5,13 +5,9 @@ require( "./secretary.css" );
      * ---- XML parsing ---- *
      * --------------------- */
     
-    var utils = require( "./utils.js" );
-    var xhr = utils.XHR("GET", "../data/cabinetInfirmier.xml").then( function(data) {console.log(data);} );
-
-    var xmlDoc = new DOMParser();
-    xmlDoc = xmlDoc.parseFromString("../data/cabinetInfirmier.xml", "application/xml");
-
-
+    // var utils = require( "./utils.js" ); Pourquoi faire ?
+    // var proxyNF = require("./proxyNF.js");
+    // proxyNF.getData("../data/cabinetInfirmier.xml");
     /* ------------------- *
      * ---- AngularJS ---- *
      * ------------------- */
@@ -21,6 +17,6 @@ require( "./secretary.css" );
     require("angular-material/angular-material.css");
 
     var modAngular = angular.module( "cabinet", [ angularMaterial ] );
-    require("./cabinetMedical.js")(modAngular);
+    require("./cabinetMedical/cabinetMedical.js")(modAngular);
 
 }());

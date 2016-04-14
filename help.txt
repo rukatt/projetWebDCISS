@@ -31,5 +31,5 @@ Projet :
 Service Angular : gère les $http.get, $post.post vers le serveur
 		  gros objet qui aussi parse le xml et interréagit avec le composant "Cabinet"
 
-Cabinet à besoin proxy.getData(...).then() -> utilisation de Promise
+Cabinet à besoin proxyNF.getData(...).then() -> utilisation de Promise
 $http.get :: QuelqueChose -> Promise
