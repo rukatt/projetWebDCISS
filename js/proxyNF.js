@@ -14,9 +14,9 @@ var proxyNF = function($http) {
 	// Récupère ce qu'il y a dans les balises XML
 	var xmlDoc = new DOMParser();
 	xmlDoc = xmlDoc.parseFromString(response.data, "application/xml");
-
-	console.log(xmlDoc.querySelector("infirmiers"));
-
+	// juste pour les infirmiers
+	var nurseObjects = xmlDoc.querySelector("infirmiers").getElementsByTagName("infirmier");
+	console.log(nurseObjects);
 	return {
 	    infimiers : [],
 	    patients  : [],
