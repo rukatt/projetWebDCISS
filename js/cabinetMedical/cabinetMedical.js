@@ -9,7 +9,7 @@ module.exports = function(moduleAngular) {
 	var self = this;
 	proxyNF.getData(this.src).then( function(cabinetMedicalJS) {
 	    self.data = cabinetMedicalJS;
-	    // console.log(self.data);
+	    console.log(self.data);
 	});
 
     }
