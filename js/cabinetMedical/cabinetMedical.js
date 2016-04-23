@@ -17,8 +17,7 @@ module.exports = function(moduleAngular) {
 
     moduleAngular.component( "cabinetMedical", {
         template   : template,
-        bindings   : {
-	    src    : "@",  
+        bindings   : { 
             titre  : "@"
         },
         controller : controller

@@ -1,20 +1,39 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Cabinet Médical</title>
-    <link rel="stylesheet" href="dev/secretary.css"/>
-    <script src="dev/secretary.js"></script>
-  </head>
+<div layout = "column">
+	
+	<md-toolbar layout = "row">
+		<h1> Cabinet Pas Trop Medical</h1>
+	</md-toolbar>
 
-  <body>
-    <h1>{{$ctrl.titre}}</h1>
-    <p>On prends les données dans {{$ctrl.src}}</p>
-    <ul>
-      <li ng-repeat="inf in $ctrl.data.infirmiers">
-	<infirmier data="inf"></infirmier>
-	{{inf|json}}
-      </li>
-    </ul>
-  </body>
-</html>
+	<div layout = "row" flex>
+
+		<md-sidenav md-component-id = "left">
+			<md-list>
+				<md-list-item>
+					<md-button ng-href = "">
+						Cabinet
+					</md-button>
+				</md-item>
+			</md-list>
+			<md-list>
+				<md-list-item>
+					<md-button ng-href = "">
+						Infirmiers
+					</md-button>
+				</md-item>
+			</md-list>
+			<md-list>
+				<md-list-item>
+					<md-button ng-href = "">
+						Patients
+					</md-button>
+				</md-item>
+			</md-list>
+		</md-sidenav>
+
+		<md-content id = "content">
+			<div ng-view></div>
+		</md-content>
+
+	</div>
+
+</div>

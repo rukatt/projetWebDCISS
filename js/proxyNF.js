@@ -55,6 +55,27 @@ var proxyNF = function($http) {
 	    cabinet   : cab
 	};
     }
+
+    // 
+    this.addPatient = function (patient) {
+	
+    };
+
+    // 
+    this.delPatient = function (patient) {
+	
+    };
+
+    // 
+    this.affectPatient = function (patient) {
+	
+    };
+
+    // 
+    this.desaffectPatient = function (patient) {
+	
+    };
+
 };
 
 proxyNF.$inject = ["$http"];

@@ -1,8 +1,10 @@
+var angular         = require( "angular"         ),
+    angularMaterial = require( "angular-material");
+
+require("angular-material/angular-material.css");
 require( "./secretary.css" );
 
-var angular = require("angular");
-var angularMaterial = require("angular-material");
-require("angular-material/angular-material.css");
-var moduleAngular = angular.module( "cabinet", [ angularMaterial ] );
+var cabinetModule = angular.module( "cabinet", [ angularMaterial ] );
 
-require("./cabinetMedical/cabinetMedical.js")(moduleAngular);
+// On branche le cabinetModule au service proxyNF
+require("proxyNF.js")(cabinetModule);
