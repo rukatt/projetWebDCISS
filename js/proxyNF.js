@@ -8,9 +8,9 @@ var proxyNF = function($http) {
 	// Récupère ce qu'il y a dans les balises XML
 	var xmlDoc = new DOMParser().parseFromString(response.data, "application/xml");
 
-	// Infirmiers 
+	// Infirmiers
 	var infs = xmlDoc.querySelector("infirmiers").getElementsByTagName("infirmier");
-	var getInfirmiers = function(i) {
+	var getInfirmier = function(i) {
 	    return {
 		id: i.getAttribute("id"),
 		nom: i.querySelector("nom").textContent,
@@ -22,7 +22,7 @@ var proxyNF = function($http) {
 
 	// Patients
 	var ps = xmlDoc.querySelector("patients").getElementsByTagName("patient");
-	var getPatients = function(p) {
+	var getPatient = function(p) {
 	    return {
 		id: p.querySelector("numero").textContent,
 		nom: p.querySelector("nom").textContent,
@@ -50,11 +50,37 @@ var proxyNF = function($http) {
 	};
 	
 	return {
-	    infimiers : [].slice.call( infs ).map(getInfirmiers),
-	    patients  : [].slice.call( ps ).map(getPatients),
+	    infimiers : [].slice.call( infs ).map(getInfirmier),
+	    patients  : [].slice.call( ps ).map(getPatient),
 	    cabinet   : cab
 	};
     }
+
+    this.newPatient = function(patient) {
+	return $http({
+            method: 'POST',
+            url: "/addPatient",
+            data: patient,
+            header: {'Content-Type': 'application/x-www-form-urlencoded'}
+        });
+    };
+
+    this.affectationPatient = function(infirmier) {
+	return $http({
+	    method: 'POST',
+	    url: "/affectation",
+	    data: infirmier
+	});
+    };
+
+    this.desaffecterPatient = function(id){
+    	return $http({
+    	    method: 'POST',
+    	    url: "/desaffectation",
+    	    data: id,
+    	    header: {"Content-Type": "application/json"}
+    	});
+    };
 };
 
 proxyNF.$inject = ["$http"];

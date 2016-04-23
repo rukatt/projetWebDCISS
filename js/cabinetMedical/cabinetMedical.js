@@ -11,6 +11,8 @@ module.exports = function(moduleAngular) {
 	    self.data = cabinetMedicalJS;
 	    console.log(self.data);
 	});
+	var data = proxyNF.getData(this.src);
+	console.log(data);
 
     }
     controller.$inject = [ "proxyNF" ]; // Injection de dépendances
